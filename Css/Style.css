@@ -1,0 +1,262 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(166, 166, 166);
+    margin: 0 35vh;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+.principal {
+    border-radius: 50%;
+    border: .4rem solid #71009e;
+    max-height: 90%;
+    max-width: 90%;
+    height: auto;
+    width: auto;
+    aspect-ratio: 1 / 1; /* Mantiene un aspecto cuadrado */
+}
+
+
+
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 0.2fr 0.4fr;
+    grid-template-rows: 0.2fr 0.7fr 0.4fr;
+    grid-template-areas:
+        "nav nav "
+        "personal  experiencia"
+        "footer  experiencia"
+    ;
+    height: 100vh;
+}
+
+.personal {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-content: space-around;
+    background: #71009e;
+    grid-area: personal;
+}
+
+.personal h3 {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.personal p {
+    margin: 1rem;
+}
+
+
+
+nav {
+    display: flex;
+    background: url(../Img/fondo.jpg) no-repeat center center fixed;
+    background-size: cover;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: nav;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-area: footer;
+    grid-template-areas:
+        "contacto contacto"
+        "fila5 fila6"
+    ;
+    background-color: rgb(36, 38, 57);
+    color: rgb(255, 255, 255);
+}
+
+.experiencia {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr 0.7fr 0.1fr 0.2fr;
+    background-color: white;
+    grid-area: experiencia;
+    grid-template-areas:
+        "exp exp"
+        "fila1 fila2"
+        "education education"
+        "fila3 fila4"
+        "skill skill"
+        "profesional profesional"
+    ;
+}
+
+.contacto {
+    color: #ffffff;
+    grid-area: contacto;
+    border-bottom: .2rem solid #71009e;
+}
+
+.fila5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-area: fila5;
+    border-right: .2rem solid #71009e;
+}
+
+.fila6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    grid-area: fila6;
+}
+
+.exp {
+    display: flex;
+    grid-area: exp;
+
+    justify-content: start;
+    align-items: center;
+    border-bottom: .2rem solid #71009e;
+}
+
+.fila1 {
+    display: flex;
+    flex-direction: column;
+    grid-area: fila1;
+    align-items: center;
+    justify-content: space-around;
+    border-right: .2rem solid #71009e;
+}
+
+.fila2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    grid-area: fila2;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    width: 3vh;
+    height: 3vh;
+    padding-right: .1rem;
+}
+
+.education {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    grid-area: education;
+    border-bottom: .2rem solid #71009e;
+}
+
+.fila3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    grid-area: fila3;
+    border-right: .2rem solid #71009e;
+}
+
+.fila4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    grid-area: fila4;
+}
+
+.skill {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    grid-area: skill;
+    border-bottom: .2rem solid #71009e;
+}
+
+.profesional {
+    grid-area: profesional;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-weight: bold;
+
+}
+
+h1 {
+    color: aliceblue;
+    font-size: clamp(1rem, 1.1vw, 3.2rem);
+
+}
+
+h2 {
+    color: #ffffff;
+    font-size: clamp(1rem, 1vw, 3.2rem);
+}
+
+h5 {
+
+    font-size: clamp(1rem, 1vw, 3.2rem);
+
+}
+
+h6 {
+
+    font-size: clamp(0.9rem, 0.9vw, 3rem);
+}
+
+p {
+
+    font-size: clamp(0.7rem, 0.8vw, 3rem);
+}
+
+
+@media only screen and (max-width: 1280px) {
+    body {
+        margin: 0;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 0.5fr 0.1fr 1fr;
+        grid-template-areas:
+            "nav"
+            "personal"
+            "experiencia"
+            "footer"
+        ;
+    }
+
+    .personal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .personal h3 {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        padding-bottom: 1rem;
+        gap: 0;
+    }
+}
